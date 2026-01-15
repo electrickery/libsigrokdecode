@@ -1,7 +1,7 @@
 ##
-## This file could become part of the libsigrokdecode project.
+## This file is part of the libsigrokdecode project.
 ##
-## Copyright (C) 2025, fjkraan@electrickery.nl
+## Copyright (C) 2026, fjkraan@electrickery.nl
 ##
 ## This program is free software; you can redistribute it and/or modify
 ## it under the terms of the GNU General Public License as published by
@@ -102,12 +102,9 @@ class Decoder(srd.Decoder):
         self.data = 0
         self.prev_data_samplenum = 0
 
-        print("TMS7000 decoder reset")
-
     def start(self):
         self.out_ann = self.register(srd.OUTPUT_ANN)
         self.out_bin = self.register(srd.OUTPUT_BINARY)
-        print("TMS7000 decoder start")
 
     def decode(self):
         while True:

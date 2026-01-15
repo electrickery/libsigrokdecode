@@ -1,7 +1,7 @@
 ##
-## This file could become part of the libsigrokdecode project.
+## This file is part of the libsigrokdecode project.
 ##
-## Copyright (C) 2018 fenugrec <fenugrec@users.sourceforge.net>
+## Copyright (C) 2026, fjkraan@electrickery.nl
 ##
 ## This program is free software; you can redistribute it and/or modify
 ## it under the terms of the GNU General Public License as published by
@@ -111,7 +111,6 @@ class Decoder(srd.Decoder):
     def reset(self):
         self.prev_cycle = Cycle.NONE
         self.op_state   = self.state_IDLE
-        print("mc6809 decoder reset")
 
     def start(self):
         self.out_ann    = self.register(srd.OUTPUT_ANN)
@@ -127,10 +126,8 @@ class Decoder(srd.Decoder):
         self.prev_cycle = Cycle.NONE
         self.op_state   = self.state_IDLE
         self.instr_len  = 0
-        print("mc6809 decoder start")
 
     def decode(self):
-        print("mc6809 decoder decode")    
         while True:
             pins = self.wait()
             cycle = Cycle.NONE
