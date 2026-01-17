@@ -1,7 +1,7 @@
 ##
 ## This file is part of the libsigrokdecode project.
 ##
-## Copyright (C) 2014 Daniel Elstner <daniel.kitta@gmail.com>
+## Copyright (C) 2026, fjkraan@electrickery.nl
 ##
 ## This program is free software; you can redistribute it and/or modify
 ## it under the terms of the GNU General Public License as published by
@@ -25,11 +25,8 @@ In addition to the 8-bit data bus, this decoder requires the input signals
 clock signal is not required. However, the TMS7000 CPU clock may be used as
 sampling clock, if applicable.
 
-Notes on the TMS7000 opcode format and descriptions of both documented and
-"undocumented" opcodes are available here:
-
 Details:
-
+https://archive.org/details/bitsavers_tiTMS70001ataManual_33796916/mode/2up?q=tms7000+family+data  page 4-45
 '''
 
 from .pd import Decoder

@@ -1,5 +1,5 @@
 ##
-## This file is part of the libsigrokdecode project.
+## This file could become part of the libsigrokdecode project.
 ##
 ## Copyright (C) 2026, fjkraan@electrickery.nl
 ##
@@ -16,13 +16,10 @@
 ## You should have received a copy of the GNU General Public License
 ## along with this program; if not, see <http://www.gnu.org/licenses/>.
 ##
-## Version 1.2, 2025-12-31
+## Version 1.3, 2026-01-17
 
 import sigrokdecode as srd
-from common.srdhelper import SrdIntEnum
-import string
 
-#Ann = SrdIntEnum.from_str('Ann', 'ROMDATA')
 class Ann:
     ADDR, MEMRD, MEMWR, WARN = range(4)
 class Row:
@@ -130,4 +127,3 @@ class Decoder(srd.Decoder):
                 else:
                     self.put(self.prev_data_samplenum, self.samplenum, self.out_ann, [Ann.MEMWR, [anntext]])
                 self.prev_data_samplenum = self.samplenum
-
