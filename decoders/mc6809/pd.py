@@ -16,11 +16,10 @@
 ## You should have received a copy of the GNU General Public License
 ## along with this program; if not, see <http://www.gnu.org/licenses/>.
 ##
-## Version 1.1, 2025-12-31
+## Version 1.2, 2026-01-17
 
 import sigrokdecode as srd
 from functools import reduce
-from common.srdhelper import SrdIntEnum
 
 class Ann:
     ADDR, MEMRD, MEMWR, INSTR, ROP, WOP, WARN = range(7)  # 0, 1, 2, 3, 4, 5, 6
@@ -46,7 +45,6 @@ def reduce_bus(bus):
         return None # unassigned bus channels
     else:
         return reduce(lambda a, b: (a << 1) | b, reversed(bus))
-
 
 class ChannelError(Exception):
     pass
